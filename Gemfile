@@ -28,6 +28,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
+  gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-checkstyle_formatter', require: false
   gem 'shoulda-matchers'
