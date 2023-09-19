@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :user do
-    email { "sample_#{SecureRandom.uuid}@sun-asterisk.com" }
-    name { Faker::Name.unique.name }
+    email {"sample_#{SecureRandom.uuid}@sun-asterisk.com"}
+    name {Faker::Name.unique.name}
   end
 end

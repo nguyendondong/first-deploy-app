@@ -5,6 +5,12 @@
 inherit_from:
   - .rubocop_enabled.yml
   - .rubocop_disabled.yml
+  - .rubocop-performance.yml
+  - .rubocop-rails.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
 
 # Common configuration.
 AllCops:
