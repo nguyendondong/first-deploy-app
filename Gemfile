@@ -10,6 +10,8 @@ gem "capistrano3-puma"
 gem "capistrano-bundler", require: false
 gem "capistrano-rails", require: false
 gem "capistrano-rvm"
+gem "devise"
+gem "devise-jwt"
 gem "dotenv-rails", "~> 2.8", ">= 2.8.1"
 gem "image_processing", "~> 1.2"
 gem "jbuilder", "~> 2.7"
