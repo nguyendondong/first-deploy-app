@@ -36,9 +36,28 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = {
+    host: ENV["HOST"],
+    port: 3000
+  }
+
+  begin
+    smtp = Net::SMTP.start ENV["SMTP_HOST"], 1025
+    if smtp.started?
+      smtp.quit
+      puts "=> INFO: Found an SMTP server on port 1025"
+      puts "   Assuming that it is MockSMTP or MailCatcher..."
+      puts "=> Emails WILL be sent to the SMTP server on port 1025"
+
+      config.action_mailer.smtp_settings = {address: ENV["SMTP_HOST"], port: 1025}
+    end
+  rescue Errno::ECONNREFUSED
+    puts "=> WARNING: Not found an SMTP server on port 1025"
+    puts "   Run MailCatcher, please!"
+  end
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
