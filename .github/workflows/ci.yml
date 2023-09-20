@@ -9,15 +9,15 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: [ "*" ]
   workflow_call:
 jobs:
   rspec:
     runs-on: ubuntu-20.04
     env:
       RAILS_ENV: test
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_HOST: localhost
 
     services:
       postgres:
