@@ -12,7 +12,7 @@ gem "capistrano-rails", require: false
 gem "capistrano-rvm"
 gem "devise"
 gem "devise-jwt"
-gem "dotenv-rails", "~> 2.8", ">= 2.8.1"
+gem "figaro"
 gem "image_processing", "~> 1.2"
 gem "jbuilder", "~> 2.7"
 gem "pg", "~> 1.5", ">= 1.5.3"
