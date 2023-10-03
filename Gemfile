@@ -11,7 +11,7 @@ gem "capistrano-bundler", require: false
 gem "capistrano-rails", require: false
 gem "capistrano-rvm"
 gem "devise"
-gem "devise-jwt"
+gem 'devise-jwt'
 gem "figaro"
 gem "image_processing", "~> 1.2"
 gem "jbuilder", "~> 2.7"
@@ -23,6 +23,8 @@ gem "redis-rails"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "active_model_serializers"
+gem "activerecord-import"
 
 group :development, :test do
   gem "brakeman", require: false
